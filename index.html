@@ -26,8 +26,7 @@
   body {
     min-height: 100dvh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     font-family: 'Crimson Text', Georgia, serif;
     overflow: hidden;
     position: relative;
@@ -53,12 +52,15 @@
   main {
     position: relative;
     z-index: 1;
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     padding: 0 1.5rem;
     max-width: 26rem;
+    margin: 0 auto;
   }
 
   h1 {
@@ -118,6 +120,25 @@
     }
   }
 
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 1rem 1.5rem calc(1.25rem + env(safe-area-inset-bottom));
+    font-size: 0.85rem;
+    color: #d8d8d8;
+  }
+
+  footer a {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(196, 154, 60, 0.4);
+  }
+
+  footer a:hover {
+    border-bottom-color: var(--gold);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     body::before, h1 .gold { animation: none; }
   }
@@ -129,5 +150,8 @@
     <a class="cta" href="https://discord.gg/2xdup499t">Join us on Discord</a>
     <p class="tagline">where missionaries gather<br>to build peace on Earth</p>
   </main>
+  <footer>
+    This is the mission of <a href="https://christianity.trusthumankind.org"><em>Christianity Reconstructed</em></a>.
+  </footer>
 </body>
 </html>
